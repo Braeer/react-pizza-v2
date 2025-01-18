@@ -5,7 +5,6 @@ import { cartItemByIdSelector } from '../../redux/cart/selectors';
 import { CartItem } from '../../redux/cart/types';
 import { addItem } from '../../redux/cart/slice';
 
-
 const typeNames = ['тонкое', 'традиционное'];
 
 type PizzaBlockProps = {
@@ -43,7 +42,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, siz
     <div className="pizza-block-wrapper">
       <div className="pizza-block">
         <Link key={`Pizza-full-${id}`} to={`/pizza/${id}`}>
-          <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+          <img className="pizza-block__image" src={`img/pizzas/${imageUrl}.png`} alt="Pizza" />
           <h4 className="pizza-block__title">{title}</h4>
         </Link>
         <div className="pizza-block__selector">
@@ -89,6 +88,6 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, imageUrl, siz
       </div>
     </div>
   );
-}
+};
 
 export default PizzaBlock;
