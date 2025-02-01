@@ -2,26 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-
 import CartItem from '../components/CartItem';
 import CartEmpty from '../components/CartEmpty';
 import { clearItems } from '../redux/cart/slice';
 import { cartSelector } from '../redux/cart/selectors';
 
-
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
-  const {totalPrice, items} = useSelector(cartSelector);
+  const { totalPrice, items } = useSelector(cartSelector);
 
   const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
-
 
   const onClickClear = () => {
     if (window.confirm('Вы дейтельно хотите очистить корзину?')) {
       dispatch(clearItems());
     }
   };
-
 
   if (!totalPrice) {
     return <CartEmpty />;
@@ -103,9 +99,9 @@ const Cart: React.FC = () => {
           </div>
         </div>
         <div className="content__items">
-        {
-          items.map((item: any) => <CartItem key={item.id} {...item} />)
-        }
+          {items.map((item: any) => (
+            <CartItem key={item.id} {...item} />
+          ))}
         </div>
         <div className="cart__bottom">
           <div className="cart__bottom-details">
@@ -117,7 +113,7 @@ const Cart: React.FC = () => {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-            <Link to="/" className="button button--outline button--add go-back-btn">
+            <Link to="/react-pizza-v2/" className="button button--outline button--add go-back-btn">
               <svg
                 width="8"
                 height="14"

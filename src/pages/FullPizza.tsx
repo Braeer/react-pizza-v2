@@ -33,7 +33,7 @@ const FullPizza: React.FC = () => {
 
   return (
     <div className="container">
-      <Link to="/">
+      <Link to="/react-pizza-v2/">
         <button className="button button--outline button--add">
           <span>Назад</span>
         </button>
