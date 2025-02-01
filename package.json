@@ -1,6 +1,7 @@
 {
   "name": "react-pizza-v2-ts",
   "version": "0.1.0",
+  "homepage": "https://braeer.github.io/react-pizza-v2/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
